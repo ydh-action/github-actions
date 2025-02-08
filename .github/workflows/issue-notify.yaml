@@ -23,5 +23,5 @@ jobs:
         done
     - name: get output
       run: |
-      echo ${{ steps.get-keyword.outputs.level }}
+        echo ${{ steps.get-keyword.outputs.level }}
         
