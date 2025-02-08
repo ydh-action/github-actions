@@ -1,7 +1,7 @@
 name: issue-notify
 
 on: 
-  issue:
+  issues:
     types: [opened]
 
 jobs:
