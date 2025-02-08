@@ -1,8 +1,10 @@
-name: push-workflow 1
-on: push
+name: issue-workflow
+on:
+  issues:
+    types: [opened]
 
 jobs:
-  push-jobs:
+  issue-jobs:
       runs-on: ubuntu-latest
       steps:
       - name: step1
@@ -11,4 +13,3 @@ jobs:
         run: |
           echo hello world
           echo github action 
-  
