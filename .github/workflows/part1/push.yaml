@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: push-workflow 1
+=======
+name: push-workflow 
+>>>>>>> 0904c83dfd43ac27c9d09d2bf7ac675da1c707b1
 on: push
 
 jobs:
