@@ -1,7 +1,7 @@
 name: test-local
 on:
   push:
-  branches: [dev]
+    branches: [dev]
   
 jobs:
   test:
@@ -10,4 +10,3 @@ jobs:
   - name: checkout the code
     uses: actions/checkout@v4
 
-    
