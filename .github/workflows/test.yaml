@@ -11,10 +11,13 @@ jobs:
     - name: checout the code
       uses: actions/checkout@v4
   
-  state-check: 
+  docker-login: 
     runs-on: ubuntu-latest
     needs: [test]
     steps:
-    - name: docker state
+    - name: docker login
       run: |
-        sudo docker ps 
+        docker login docker.io
+        $DOCKER_USERNAME
+        $DOCKER_PASSWD
+
