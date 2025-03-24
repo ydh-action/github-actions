@@ -18,6 +18,4 @@ jobs:
     - name: docker login
       run: |
         docker login docker.io
-        $DOCKER_USERNAME
-        $DOCKER_PASSWD
 
