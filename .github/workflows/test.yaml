@@ -10,12 +10,4 @@ jobs:
     steps:
     - name: checout the code
       uses: actions/checkout@v4
-  
-  docker-login: 
-    runs-on: ubuntu-latest
-    needs: [test]
-    steps:
-    - name: docker login
-      run: |
-        docker login docker.io
 
