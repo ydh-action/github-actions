@@ -5,7 +5,7 @@ on:
     
 jobs:
   test:
-    if: github.repository == 'ydh-action/gitgub-actions'
+    if: github.repository == 'ydh-action/github-actions'
     runs-on: ubuntu-latest
     steps:
     - name: checout the code
