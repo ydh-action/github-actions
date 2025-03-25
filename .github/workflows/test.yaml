@@ -28,7 +28,8 @@ jobs:
       uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.CINAMON_HOST }}
-        username: ${{ secrets.cinamonydh }}
+        username: ${{ secrets.CINAMON_USERNAME }}
+        key: ${{ secrets.CINAMON_SERVERKEY }}
         password: ${{ secrets.CINAMON_PASSWD }}
         port: 22
         script: | 
