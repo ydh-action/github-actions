@@ -13,7 +13,7 @@ jobs:
   
   ssh: 
    runs-on: ubuntu-latest
-   needs: [image-build]
+   needs: [test]
    steps: 
    - name: image deploy
      uses: appleboy/ssh-action@v0.1.4
