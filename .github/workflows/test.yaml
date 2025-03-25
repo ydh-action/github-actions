@@ -10,6 +10,17 @@ jobs:
     steps:
     - name: checout the code
       uses: actions/checkout@v4
+
+    - name: Create SSH Key
+      run: |
+        echo "${{ secrets.CINAMON_SERVERKEY }}" > ~/private-key.pem
+        chmod 600 ~/.ssh/id_rsa
+    - name: Create SSH directory 
+      run: | 
+        mkdir -p ~/.ssh
+    - name: Add known host # known host에 해당 키를 추가
+      run: |
+        ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
   
   image-build:
     runs-on: ubuntu-latest
@@ -20,20 +31,21 @@ jobs:
         docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWD }}
         docker pull dockerydh/custom-ubuntu:yoon
         pwd
+        whoami
   
-  deploy: 
-    runs-on: ubuntu-latest
-    needs: [image-build]
-    steps: 
-    - name: image deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.CINAMON_HOST }}
-        username: ${{ secrets.CINAMON_USERNAME }}
-        key: ${{ secrets.CINAMON_SERVERKEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          whoami
+  #deploy: 
+  # runs-on: ubuntu-latest
+  # needs: [image-build]
+  # steps: 
+  # - name: image deploy
+  #   uses: appleboy/ssh-action@master
+  #   with:
+  #     host: ${{ secrets.CINAMON_HOST }}
+  #     username: ${{ secrets.CINAMON_USERNAME }}
+  #     key: ${{ secrets.CINAMON_SERVERKEY }}
+  #     port: ${{ secrets.PORT }}
+  #     script: |
+  #       whoami
                    
           
 
