@@ -13,12 +13,12 @@ jobs:
 
     - name: Create SSH Key
       run: |
-        echo "${{ secrets.CINAMON_SERVERKEY }}" > ~/private-key.pem
+        echo "${{ secrets.CINAMON_SERVERKEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
     - name: Create SSH directory 
       run: | 
         mkdir -p ~/.ssh
-    - name: Add known host # known host에 해당 키를 추가
+    - name: Add known host 
       run: |
         ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
   
