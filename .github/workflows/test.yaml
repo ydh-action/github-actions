@@ -19,6 +19,7 @@ jobs:
       run: | 
         docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWD }}
         docker pull dockerydh/custom-ubuntu:yoon
+        whoami
   
   deploy: 
     runs-on: ubuntu-latest
