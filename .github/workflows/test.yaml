@@ -31,9 +31,17 @@ jobs:
         username: ${{ secrets.CINAMON_USERNAME }}
         key: ${{ secrets.CINAMON_SERVERKEY }}
         password: ${{ secrets.CINAMON_PASSWD }}
-        port: 22
-        script: | 
-          docker run custom-ubuntu:yoon
+        port: 22   
+    - name: Add SSH known hosts
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.CINAMON_SERVERKEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        echo "Scanning host: ${{ secrets.CINAMON_HOST }}"
+        ssh-keyscan -H ${{ secrets.CINAMON_HOST }} >> ~/.ssh/known_hosts
+        echo "Known hosts after scanning:"
+        cat ~/.ssh/known_hosts
+        docker run custom-ubuntu:yoon          
 
   
         
