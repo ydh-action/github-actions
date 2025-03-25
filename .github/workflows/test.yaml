@@ -18,8 +18,8 @@ jobs:
     - name: docker build
       run: | 
         docker login docker.io
-        ${{ secrets.$DOCKERHUB_USERNAME }}
-        ${{ secrets.$DOCKERHUB_PASSWD }}
+        $DOCKERHUB_USERNAME
+        $DOCKERHUB_PASSWD
         docker pull dockerydh/custom-ubuntu:yoon
   
   deploy: 
