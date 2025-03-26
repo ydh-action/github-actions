@@ -12,6 +12,6 @@ jobs:
       uses: actions/checkout@v4
     - name: run bash  
       run: | 
-        chmod +x password-period.sh
-        ./password-period.sh
+        chmod +x ./my-app/password-period.sh
+        ./my-app/password-period.sh
 
