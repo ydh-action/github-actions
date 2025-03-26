@@ -23,7 +23,13 @@ jobs:
        key: ${{ secrets.CINAMON_SERVERKEY }}
        port: ${{ secrets.PORT }}
        script: |
+<<<<<<< HEAD:.github/workflows/part2/ssh-test.yaml
         echo "테스트 출력"  
+=======
+        echo "테스트 출력1"
+                   
+          
+>>>>>>> f5fd0a84770a62cfef66e1e6ca08bca3ea20df55:.github/workflows/ssh-test.yaml
 
   
         
