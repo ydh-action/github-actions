@@ -10,9 +10,8 @@ jobs:
     steps: 
     - name: checkout the code
       uses: actions/checkout@v4
- 
-    - name: run bash
+    - name: run bash  
       run: | 
-        cd ~/my-app
+        chmod +x password-period.sh
         ./password-period.sh
 
