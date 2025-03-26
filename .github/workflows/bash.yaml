@@ -1,6 +1,6 @@
 name: bash
 on: 
-  issue:
+  issues:
     types: [opened]
     branches: [dev]
 
