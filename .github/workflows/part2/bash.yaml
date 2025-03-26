@@ -1,0 +1,22 @@
+name: bash
+on: 
+  push:
+    branches: [dev]
+
+jobs:
+  checkout:
+  if: github.repository == 'ydh-action/github-actions'
+  runs-on: ubuntu-latest
+  steps: 
+  - name: checkout the code
+    uses: actions/checkout@v4
+
+  password-check:
+  runs-on: ubuntu-latest
+  needs: [checkout]
+  steps: 
+  - name: run bash
+    run: | 
+      cd ~/my-app
+      ./password-period.sh
+      

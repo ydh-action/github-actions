@@ -23,9 +23,7 @@ jobs:
        key: ${{ secrets.CINAMON_SERVERKEY }}
        port: ${{ secrets.PORT }}
        script: |
-        echo "테스트 출력"
-                   
-          
+        echo "테스트 출력"  
 
   
         
