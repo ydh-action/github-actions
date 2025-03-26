@@ -1,7 +1,7 @@
 name: bash
 on: 
-  pull_request:
-    types: [opened, synchronize]
+  issue:
+    types: [opened]
     branches: [dev]
 
 jobs:
