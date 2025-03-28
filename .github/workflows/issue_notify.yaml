@@ -3,6 +3,7 @@ name: issue_notify
 on: 
   issues:
     types: [opened]
+  workflow_dispatch: 
 
 jobs:
   get-keyword:
